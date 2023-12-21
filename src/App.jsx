@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import './App.css'
 import Gamepage from './components/GamePage';
 import HomePage from './components/HomePage';
 
 export default function App(){
-  const [isGamesStart, setisGameStart] = useState(false);
+  const [isGamesStart, setisGameStart] = useState(true);
 
   const toggleGamePlay = () =>{
     setisGameStart((prev) => !prev);

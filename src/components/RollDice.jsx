@@ -1,23 +1,31 @@
 import { useState } from 'react'
 import Button from './Button'
-function RollDice() {
-  const [currentDice, setCurrentDice] = useState();
+import Rules from './Rules'
+function RollDice({currentDice, rollDice, setScore}) {
 
-  const randomNumber=(min , max)=>{
-    return Math.random() * (max-min) + max;
+  // UseState is tranfer in GamePage Component and Use in this Component as Props.....!
+
+  const resetScore =()=>{
+      setScore(0)
   }
-  
+
+  const handleRules = () =>{
+    
+  }
+
   return (
-    <div className="flex items-center justify-center">
-      <div>
-          <img src="/public/dice_1.png" alt="dice 1" width={250} height={250} />
-          <p className="text-[24px] leading-normal font-semibold text-center mt-2">Click on Dice to roll</p>
+    <div className="flex flex-col items-center justify-center">
+      <div className='mb-3'>
+          <div onClick={rollDice}>
+            <img src={`/public/dice_${currentDice}.png`} alt="dice 1" className='w-[180px] h-[180px] lg:w-[250px] lg:h-[250px]' />
+          </div>
+          <p className="text-[12px] lg:text-[24px] leading-normal font-semibold text-center mt-2">Click on Dice to roll</p>
 
           <div className='flex flex-col gap-2 items-center mt-3'>
-            <Button text="Reset Score"/>
-            <Button text="Show Rules"/>
+            <Button onClick={resetScore} text="Reset Score"/>
           </div>
       </div>
+      <Rules/>
     </div>
   )
 }
