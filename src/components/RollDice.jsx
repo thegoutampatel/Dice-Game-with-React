@@ -17,7 +17,7 @@ function RollDice({currentDice, rollDice, setScore}) {
     <div className="flex flex-col items-center justify-center">
       <div className='mb-3'>
           <div onClick={rollDice}>
-            <img src={`/public/dice_${currentDice}.png`} alt="dice 1" className='w-[180px] h-[180px] lg:w-[250px] lg:h-[250px]' />
+            <img src={`/public/images/dice_${currentDice}.png`} alt="dice 1" className='w-[180px] h-[180px] lg:w-[250px] lg:h-[250px]' />
           </div>
           <p className="text-[12px] lg:text-[24px] leading-normal font-semibold text-center mt-2">Click on Dice to roll</p>
 
